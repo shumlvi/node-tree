@@ -1,0 +1,22 @@
+<div class="node-container has-branch">
+  <span class="icon icon-{{node.type}}"></span>
+  {{node.name}}
+
+  <div class="action-buttons">
+    <button *ngIf="node.type === 'folder'" (click)="isTypeButtonsVisible = true">+</button>
+    <button (click)="deleteAction(node)">x</button>
+  </div>
+</div>
+
+<app-node-tree *ngIf="node.children" [nodes]="node.children" (delete)="delete.emit($event)"></app-node-tree>
+
+<div class="add-node-input-container has-branch" *ngIf="isTypeButtonsVisible || isAddNodeInputVisible">
+  <div class="type-buttons" *ngIf="isTypeButtonsVisible">
+    <button (click)="showAddNodeInput('file')">File</button>
+    <button (click)="showAddNodeInput('folder')">Folder</button>
+  </div>
+  <app-node-add *ngIf="isAddNodeInputVisible"
+                [type]="newNodeType"
+                [parentNodeList]="node.children!"
+                (close)="this.isAddNodeInputVisible = false"></app-node-add>
+</div>

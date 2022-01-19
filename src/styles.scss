@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~normalize.css';
+
+.icon {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  position: relative;
+  top: 4px;
+}
+
+.icon-folder {
+  background: url("assets/folder-open-regular.svg") no-repeat;
+}
+
+.icon-file {
+  background: url("assets/file-regular.svg") no-repeat;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 2px 8px;
+  border-radius: 5px;
+  margin: 0 2px;
+}

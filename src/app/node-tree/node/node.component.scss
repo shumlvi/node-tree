@@ -1,0 +1,70 @@
+:host {
+  display: block;
+  padding-left: 15px;
+
+  & > app-node-tree {
+    margin-top: 5px;
+  }
+
+  &:first-child > .has-branch:after {
+    height: 15px;
+  }
+}
+
+.has-branch {
+  position: relative;
+
+  &:before {
+    content: " ";
+    display: block;
+    width: 5px;
+    height: 1px;
+    background-color: grey;
+    position: absolute;
+    left: -5px;
+    top: 15px;
+  }
+
+  &:after {
+    content: " ";
+    display: block;
+    width: 1px;
+    height: 32px;
+    background-color: grey;
+    position: absolute;
+    left: -5px;
+    bottom: 12px;
+  }
+}
+
+.node-container {
+  display: inline-block;
+  margin: 2px 0;
+  border: 1px solid transparent;
+  padding: 0 10px 0 5px;
+  width: auto;
+  height: 27px;
+
+  &:hover {
+    border-color: grey;
+
+    .action-buttons {
+      display: inline-block;
+    }
+  }
+
+  .action-buttons {
+    display: none;
+  }
+}
+
+.add-node-input-container {
+  height: 27px;
+  padding: 0 10px 0 5px;
+  margin: 2px 0 2px 15px;
+  border: 1px solid transparent;
+
+  &.has-branch:after {
+    height: 15px;
+  }
+}
